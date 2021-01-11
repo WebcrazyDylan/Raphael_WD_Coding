@@ -1,6 +1,6 @@
 # Raphael_WD_Coding
 
-## Name : Dylan Park (Morning Class)
+## Dylan Park (Morning Class)
 
 CICCC Web & Mobile App Development
 
