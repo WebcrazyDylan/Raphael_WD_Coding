@@ -1,0 +1,65 @@
+@import url('https://fonts.googleapis.com/css2?family=Anton&family=Redressed&display=swap');
+
+.title  {
+    font-family: 'Anton', sans-serif;
+}
+.subtitle  {
+    font-family: 'Redressed', cursive;    
+}
+
+#t1  {    
+    font-size: 3.5rem;
+}
+
+#subt1  {    
+    font-size: x-large;
+}
+
+.img {
+    border : 5px solid rgb(0, 162, 255);
+}
+
+.table {    
+    width: 100%;
+}
+.table tr th {
+    font-weight: bold;
+    border : 2px solid rgb(21, 255, 0);
+}
+
+.table tr td {
+    border : 2px solid rgb(21, 255, 0);
+}
+
+h2, h3 {
+    color :rgb(255, 136, 0);
+}
+span {
+    background-color: cornflowerblue;
+    color :white;
+    font-size :x-large ;
+}
+
+.menu {
+    list-style: none;
+    text-align: center;
+    margin : 10px 0;
+}
+.menu li {
+    display : inline-flex ;
+    margin-right : 15px;
+}
+.menu a:link, a:visited {
+    background-color: white;
+    color: black;
+    border: 2px solid cornflowerblue;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-weight: bold;    
+}
+.menu a:hover {
+    background-color: cornflowerblue;
+    color: white;
+}
