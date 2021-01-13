@@ -1,0 +1,107 @@
+body {
+    padding :0;
+    margin : 0;
+}
+
+#header {
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    /* display :block */
+}
+
+#content {
+    margin-bottom: 1rem;
+}
+
+#border {
+    width : 60%;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: blanchedalmond;
+    
+}
+
+#card-first, #card-third, #card-fifth  {
+    float: left;
+    background-color: blue;
+}
+#card-second , #card-fourth, #card-sixth {
+    float: left;
+    background-color: brown;
+}
+
+#card-first:hover {
+    animation-name: changecolor;
+    animation-duration: 1.5s;
+    transform: translate(50px, 100px);
+}
+
+#card-second:hover {
+    animation-name: changecolor;
+    animation-duration: 1.5s;
+    transform: scale(2, 2);
+}
+
+#card-third:hover {
+    animation-name: changecolor;
+    animation-duration: 1.5s;
+    transform: rotate(90deg);
+    /* transform: skewX(20deg); */
+}
+
+#card-fourth:hover {
+    animation-name: changecolor;
+    animation-duration: 1.5s;
+    transform: rotate(-90deg);
+    /* transform: skewX(20deg); */
+}
+
+#card-fifth:hover {
+    animation-name: changecolor;
+    animation-duration: 1.5s;
+    transform: skewX(40deg);
+}
+
+#card-sixth:hover {
+    animation-name: changecolor2;
+    animation-duration: 2s;
+}
+
+#card-seventh:hover {
+    position: relative;
+    animation-timing-function: ease-in-out;
+    animation: mymove 5s infinite;
+    /* animation-name: changecolor2;
+    animation-duration: 2s;
+    transform: translate(20px, 200px); */
+}
+
+@keyframes changecolor {
+    from {background-color: rgb(255, 0, 0);}
+    to   {background-color: yellow;}
+    0%   {background-color: red;}
+    25%  {background-color: rgb(0, 255, 106);}
+    50%  {background-color: blue;}
+    100% {background-color: rgb(255, 98, 7);}
+}
+
+@keyframes changecolor2 {
+    from {background-color: white;}
+    to   {background-color: rgb(7, 7, 7);}
+}
+
+@keyframes mymove {
+    from {left: 0px; top : 0px; background-color: yellow;}
+    to {left: 400px; top : -300px; }
+  }
+
+.card {
+    width : 250px;
+    height: 300px;
+    text-align: center;
+    line-height: 300px;
+    background-color: orange;
+    overflow: hidden;
+    cursor: pointer;
+}
