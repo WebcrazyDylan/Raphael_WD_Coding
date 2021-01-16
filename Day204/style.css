@@ -1,0 +1,222 @@
+html, body {
+    padding :0;
+    margin : 0;
+    height: 100%;
+    overflow: auto;
+}
+img {
+    margin-top: 20px;
+}
+
+#header {
+    text-align: left;
+    margin-left: 0;
+    margin-right: 0;
+}
+
+#header:hover {
+    position: relative;
+    animation-name: changecolor;
+    animation-duration: 2s;
+    cursor: pointer;
+    /* transform: scale(2, 2); */
+}
+
+@keyframes changecolor {    
+  
+    0%   {left: 0px; color: red; }
+    25%  {color: greenyellow; transform: scale(1.05, 1.05); left: 25px;}
+    50%  {color: blue; transform: scale(1.1, 1.1); left: 50px;}
+    100% {color: palevioletred; transform: scale(1.1.5, 1.1.5); left: 100px;}
+    from {left: 0px;}
+    to {left: 400px;}
+}
+
+@keyframes changecolor2 {
+    from {background-color: white;}
+    to   {background-color: rgb(7, 7, 7);}
+}
+
+#nav {
+    z-index: 999;
+    position: -webkit-sticky; /* Safari */
+    position: sticky;
+    top: 0;
+    text-align: left;
+    margin-left: 0;
+    margin-right: 0;
+    width: 100%;
+    background-color: darkgray;
+}
+
+#nav-left {
+    z-index: 999;
+    position: -webkit-sticky; /* Safari */
+    position: fixed;
+    width: 200px;
+
+}
+
+.menu-top {
+    list-style: none;
+    text-align: left;
+    margin : 0;
+    padding : 0;
+}
+
+.menu-top li {
+    display : table-cell ;
+    margin : 0;
+    padding : 0;
+}
+.menu-top a:link, .menu-top a:visited {
+    background-color: #5F5F5F;
+    color: whitesmoke;
+    border: 0px solid cornflowerblue;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: block;
+    font-weight: bold;    
+}
+.menu-top a:hover {
+    background-color: cornflowerblue;
+    color: white;
+}
+
+/* #wrap{overflow:hidden; position:relative; width:1000px; margin:0 auto;} */
+#wrap{
+    overflow:auto; 
+    position:relative; 
+    width:100%; 
+    min-height: 75%;
+    margin:0 0;
+}
+#left_area{
+    float:left; 
+    position:absolute; 
+    top:0px; 
+    left:0px; 
+    bottom:0px; 
+    width:200px; 
+    color:#FFFFFF;
+    background:rgb(56, 56, 56);
+    min-height: 100%;
+}
+#content{
+    /* float:right; */
+    position: relative;  
+    top:-10px; 
+    left:210px; 
+    width:calc(100% - 220px);
+    margin-bottom: 5px;
+    background-color: white;
+}
+
+.menu-left {
+    list-style: none;
+    text-align: left;
+    margin : 0;
+    padding : 0;
+}
+
+.menu-left li {
+    display : flexbox ;
+    margin : 0;
+    padding : 0;
+}
+.menu-left a:link, .menu-left a:visited {
+    background-color: rgb(226, 224, 224);
+    color: black;
+    border: 0px solid cornflowerblue;
+    padding: 10px 20px;
+    text-align: left;
+    text-decoration: none;
+    display: block;
+    font-weight: normal;    
+}
+.menu-left a:hover, .menu-left a:active {
+    background-color: rgb(237, 100, 175);
+    color: white;
+}
+
+.hover {
+    background-color: rgb(26, 190, 26) !important;
+    color: white !important;
+}
+
+.info {
+    padding : 0px 10px;
+    background-color: rgb(236, 236, 233);
+    width: auto;
+}
+
+#info1, #info2, #info3 {
+    display: none;
+}
+#info1:target, #info2:target, #info3:target {
+    display: flow-root;
+}
+
+.emphasize {
+    background-color: rgb(205, 220, 247);
+    color: red;
+    line-height: 2rem;
+    padding : 3px 3px;
+}
+
+.emphasize-border {
+    border :2px green solid ;
+    background-color: yellow;
+}
+
+table.browserref {
+    border-collapse: collapse;
+    width: 100%;
+    border: 1px solid blue;
+}
+table.browserref th {
+    height: 44px;
+    background-repeat: no-repeat;
+    background-position: center center;
+    border: 1px solid rgb(1, 1, 66);
+    background-color: #ffffff;
+    font-weight: normal;
+    color: #555555;
+    padding: 11px 5px 11px 5px;
+    vertical-align: middle;
+}
+table.browserref tr:nth-child(odd) {
+    background-color: #ffffff;
+}
+table.browserref td {
+    border: 1px solid rgb(1, 1, 66);
+    text-align: center;
+    padding: 8px;
+    vertical-align: top;
+}
+table.browserref .bsChrome {
+    background-image: url(https://www.w3schools.com/images/compatible_chrome.gif);
+}
+table.browserref .bsEdge {
+    background-image: url(https://www.w3schools.com/images/compatible_edge.gif);
+}
+table.browserref .bsFirefox {
+    background-image: url(https://www.w3schools.com/images/compatible_firefox.png);
+}
+table.browserref .bsSafari {
+    background-image: url(https://www.w3schools.com/images/compatible_safari.gif);
+}
+table.browserref .bsOpera {
+    background-image: url(https://www.w3schools.com/images/compatible_opera.gif);
+}
+
+#footer {
+    clear:both; 
+    border-top:0px solid #ccc;
+    padding: 5px 0; 
+    text-align:right; 
+    background-color: cornflowerblue; 
+    color:white;
+    margin-top: 0px;
+}

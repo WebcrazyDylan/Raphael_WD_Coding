@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WADP-Weekly Assignment 2</title>
+    <link href="style.css?v=1.0.4" rel="stylesheet">
+</head>
+<body>
+    <header id="header">
+        <h1>&nbsp;&nbsp;CSS Schools.com</h1>
+    </header>
+
+    <nav id="nav">
+        <ul class="menu-top">
+            <li><a href="./index.html">HOME</a></li>
+            <li><a href="#2">HTML</a></li>                
+            <li><a href="#3" class="hover">CSS</a></li>                
+            <li><a href="#4">JAVASCRIPT</a></li>        
+            <li><a href="#4">SQL</a></li>              
+        </ul>
+    </nav>
+
+    <div id="wrap">
+        <div id="left_area">
+            <nav id="nav-left">
+            <ul class="menu-left">
+                <li><a href="#info1">CSS Position</a></li>
+                <li><a href="#info2">CSS Animations</a></li>                
+                <li><a href="#info3">CSS Transitions</a></li>                
+                <li><a href="#info4">CSS Buttons</a></li>        
+                <li><a href="#info5">CSS Pagination</a></li>              
+            </ul>
+            </nav>
+        </div>
+        <div id="content">            
+            <img src = "https://www.tutorialrepublic.com/lib/images/css-illustration.png" width="100%">
+            
+            <div id="info1" class="info">
+                <h1>CSS Layout - The position Property</h1>
+                <hr>
+                <h2>The position Property</h2>
+                <p>The position property specifies the type of positioning method used for an element.</p>
+                <p>There are five different position values:</p>
+                <span class="emphasize">static<br>
+                relative<br>
+                fixed<br>
+                absolute<br>
+                sticky<br></span>
+
+                Elements are then positioned using the top, bottom, left, and right properties. 
+                However, these properties will not work unless the <span class="emphasize">position</span> property is set first. They also work differently depending on the position value.
+                
+                <hr>
+                <h2>position: static;</h2>
+                <p ><span class="emphasize">HTML elements are positioned static by default.</span></p>
+                <p>Static positioned elements are not affected by the top, bottom, left, and right properties.</p>
+                <p>An element with position: static; is not positioned in any special way; 
+                    it is always positioned according to the normal flow of the page:</p>
+
+                <hr>
+                <h2>position: relative;</h2>
+                <p><span class="emphasize">An element with position: relative; is positioned relative to its normal position.</span></p>
+                <p>Setting the top, right, bottom, and left properties of a relatively-positioned element will cause it to be adjusted
+                    away from its normal position. Other content will not be adjusted to fit into any gap left by the element.</p>
+                    
+                <hr>
+                <h2>position: fixed;</h2>
+                <p>An element with <span class="emphasize">position: fixed;</span> is positioned relative to the viewport, which means it always stays in the same place even if the page is scrolled. The top, right, bottom, and left properties are used to position the element.</p>
+                <p>A fixed element does not leave a gap in the page where it would normally have been located.</p>
+                <p>Notice the fixed element in the lower-right corner of the page. Here is the CSS that is used:</p>     
+                    
+                <hr>
+                <h2>position: absolute;</h2>
+                <p>An element with <span class="emphasize">position: absolute;</span> is positioned relative to the nearest positioned ancestor (instead of positioned relative to the viewport, like fixed).</p>
+                <p>However; if an absolute positioned element has no positioned ancestors, it uses the document body, and moves along with page scrolling.</p>
+                <p>Note: A "positioned" element is one whose position is anything except static.</p>     
+
+                
+                <hr>
+                <h2>position: sticky;</h2>
+                <p>An element with position: sticky; is positioned based on the user's scroll position.</p>
+                <p>A sticky element toggles between relative and fixed, depending on the scroll position. 
+                    It is positioned relative until a given offset position is met in the viewport - then it "sticks" in place (like position:fixed).</p>
+                <div class="emphasize-border">Note: Internet Explorer does not support sticky positioning. 
+                    Safari requires a -webkit- prefix (see example below). 
+                    You must also specify at least one of top, right, bottom or left for sticky positioning to work.
+                </div>
+            </div>
+
+            <div id="info2" class="info">
+                <h1>CSS Animations</h1>
+                <hr>
+                <h2>CSS allows animation of HTML elements without using JavaScript or Flash!</h2>
+                <p>In this chapter you will learn about the following properties:</p>
+                <span class="emphasize">@keyframes<br>
+                    animation-name<br>
+                    animation-duration<br>
+                    animation-delay<br>
+                    animation-iteration-count<br>
+                    animation-direction<br>
+                    animation-timing-function<br>
+                    animation-fill-mode<br>
+                    animation<br>
+                </span>
+
+                <hr>
+                <h2>What are CSS Animations?</h2>
+                <p>An animation lets an element gradually change from one style to another.</p>
+                <p>You can change as many CSS properties you want, as many times you want.</p>
+                <p>To use CSS animation, you must first specify some keyframes for the animation.</p>
+                <p>Keyframes hold what styles the element will have at certain times.</p>
+            </div>
+
+            <div id="info3" class="info">
+                <h1>CSS Transitions</h1>
+                <hr>
+                <h2>CSS transitions allows you to change property values smoothly, over a given duration.</h2>
+                <p>Mouse over the element below to see a CSS transition effect:</p>
+
+                <p>In this chapter you will learn about the following properties:</p>
+                <span class="emphasize">transition<br>
+                transition-delay<br>
+                transition-duration<br>
+                transition-property<br>
+                transition-timing-function<br></span>
+                <hr>
+                <h2>Browser Support for Transitions</h2>
+                <p>The numbers in the table specify the first browser version that fully supports the property.</p>
+
+                <table class="browserref ">
+                    <tbody><tr>
+                    <th style="width:25%;font-size:16px;text-align:left;">Property</th>
+                    <th style="width:15%;" class="bsChrome" title="Chrome"></th>
+                    <th style="width:15%;" class="bsEdge" title="Internet Explorer / Edge"></th>
+                    <th style="width:15%;" class="bsFirefox" title="Firefox"></th>
+                    <th style="width:15%;" class="bsSafari" title="Safari"></th>
+                    <th style="width:15%;" class="bsOpera" title="Opera"></th>                
+                    </tr>
+                    <tr>
+                    <td style="text-align:left;">transition</td>
+                    <td>26.0</td>
+                    <td>10.0</td>
+                    <td>16.0</td>
+                    <td>6.1</td>
+                    <td>12.1</td>
+                    </tr>
+                    <tr>
+                    <td style="text-align:left;">transition-delay</td>
+                    <td>26.0</td>
+                    <td>10.0</td>
+                    <td>16.0</td>
+                    <td>6.1</td>
+                    <td>12.1</td>
+                    </tr>
+                    <tr>
+                    <td style="text-align:left;">transition-duration</td>
+                    <td>26.0</td>
+                    <td>10.0</td>
+                    <td>16.0</td>
+                    <td>6.1</td>
+                    <td>12.1</td>
+                    </tr>
+                    <tr>
+                    <td style="text-align:left;">transition-property</td>
+                    <td>26.0</td>
+                    <td>10.0</td>
+                    <td>16.0</td>
+                    <td>6.1</td>
+                    <td>12.1</td>
+                    </tr>
+                    <tr>
+                    <td style="text-align:left;">transition-timing-function</td>
+                    <td>26.0</td>
+                    <td>10.0</td>
+                    <td>16.0</td>
+                    <td>6.1</td>
+                    <td>12.1</td>
+                    </tr>
+                    </tbody>
+                </table>
+
+                <hr>
+                <h2>How to Use CSS Transitions?</h2>
+                <p>To create a transition effect, you must specify two things:</p>
+                <p>the CSS property you want to add an effect to the duration of the effect</p>
+                <p>Note: If the duration part is not specified, the transition will have no effect, because the default value is 0.</p>
+                <p>The following example shows a 100px * 100px red &lt;div&gt; element. The &lt;div&gt; element has also specified a transition effect for the width property, with a duration of 2 seconds:</p>
+                
+            </div>
+            
+        
+        </div>
+        
+    </div>
+    
+
+    <Footer id="footer">            
+        COPYRIGHT © 2021 Dylan.&nbsp;
+    </Footer>
+</body>
+</html>
