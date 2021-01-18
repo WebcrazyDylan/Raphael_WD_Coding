@@ -151,6 +151,7 @@ img {
     width: auto;
 }
 
+/* Control Page */
 #info1, #info2, #info3 {
     display: none;
 }
