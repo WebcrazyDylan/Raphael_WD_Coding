@@ -1,0 +1,29 @@
+.skillsIcons {
+  background: #4ec497c0;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  padding: 30px 0;
+  margin: 10px 10px;
+  border-radius: 20px;
+  display: flex;
+  text-align: center;
+}
+.skillsIcons .skill {
+  flex-basis: 20%;
+  padding: 30px 0;
+}
+.skillsIcons .skill i {
+  font-size: 5rem;
+  transition: all 0.3s ease;
+  /* color: #ffffff; */
+}
+.skillsIcons .skill:hover i {
+  color: var(--skin-color);
+}
+.skillsIcons .skill h4 {
+  color: #ffffff;
+  text-transform: uppercase;
+  font-family: 'Oswald', sans-serif;
+  font-size: 1.2rem;
+  margin-bottom: 5px;
+}
