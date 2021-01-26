@@ -158,3 +158,13 @@ img {
   justify-content: center; */
   /* min-height: 100vh; */
 }
+
+#footer {
+  clear: both;
+  border-top: 0px solid #ccc;
+  text-align: right;
+  background-color: cornflowerblue;
+  color: white;
+  padding: 5px 0;
+  margin-top: 0px;
+}
