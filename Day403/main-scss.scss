@@ -1,0 +1,17 @@
+.home-section {
+  color: white;
+}
+body {
+  background-color: rgb(61, 60, 60);
+}
+
+@mixin flexCenter($direction) {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: $direction;
+}
+
+.menu-top {
+  @include flexCenter(row);
+}
