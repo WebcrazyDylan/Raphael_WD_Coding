@@ -1,4 +1,4 @@
-@import "./colors";
+@import "./_colors";
 
 @if $skin == "light" {
   $body-background_color: rgb(241, 239, 219);
@@ -29,11 +29,28 @@ body {
   display: grid;
   place-items: center;
   position: relative;
-  padding: 40px;
+  padding: 0;
   background: $body-background_color;
 }
 .outer-shadow {
   box-shadow: var(--outer-shadow);
+}
+
+#header {
+  display: flex;
+  width: 100%;
+  height: 100px;
+  align-items: center;
+  justify-content: center;
+  background: $fullScreen_backgroud;
+  margin-bottom: 20px;
+  /* background-color: red; */
+}
+#header h1 {
+  /* background-color: blue; */
+  font-size: 48px;
+  font-weight: 600;
+  text-transform: uppercase;
 }
 
 #gallery {
@@ -151,6 +168,45 @@ body {
     margin-bottom: 10px;
     padding: 5px;
   }
+}
+
+#fullScreen {
+  .comments-input-box {
+    max-height: 600px;
+    width: 200px;
+    color: black;
+    font-size: 20px;
+    background: rgb(181, 236, 109);
+    border: $gallery_img_border;
+    position: absolute;
+    // clip-path: polygon(0 0, 100% 0, 75% 100%, 0% 100%);
+    right: 0;
+    top: 200px;
+    display: table-row;
+    align-items: center;
+    padding: 10px 10px 0px 10px;
+    margin: 10px;
+    overflow: hidden;
+    z-index: 99;
+  }
+}
+#fullScreen {
+  .comment-input {
+    background: $fullScreen_backgroud;
+    margin-bottom: 10px;
+    padding: 5px;
+  }
+}
+
+#footer {
+  clear: both;
+  border-top: 0px solid #ccc;
+  text-align: right;
+  background-color: cornflowerblue;
+  color: white;
+  padding: 5px 0;
+  margin-top: 20px;
+  width: 100%;
 }
 
 @media only screen and (max-width: 700px) {
