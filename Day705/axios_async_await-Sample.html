@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <style>
+      table {
+        border-spacing: 0;
+      }
+
+      table tr th {
+        border-bottom: 2px solid black;
+        padding: 5px;
+      }
+
+      table tr td {
+        border-bottom: 1px solid black;
+        padding: 5px;
+      }
+    </style>
+  </head>
+  <body>
+    <input type="text" id="user_id" />
+    <button type="button" onclick="loadArticles()">
+      Load Articles from Server
+    </button>
+
+    <table id="list" width="100%">
+      <thead>
+        <tr>
+          <th>Title</th>
+          <th>comment Count</th>
+        </tr>
+      </thead>
+      <tbody></tbody>
+    </table>
+
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script>
+      /*
+            function loadComments(article) {
+                axios.get('https://jsonplaceholder.typicode.com/comments?postId=' + article.id).then(response => {
+                    const table = document.getElementById('list');
+                    const tr = document.createElement('tr');
+                    const titleTd = document.createElement('td');
+                    const commentCountTd = document.createElement('td');
+
+                    titleTd.innerText = article.title;
+                    commentCountTd.innerText = response.data.length;
+                    commentCountTd.style.textAlign = 'center';
+
+                    tr.appendChild(titleTd);
+                    tr.appendChild(commentCountTd);
+                    table.appendChild(tr);
+                });
+            }
+
+            function loadArticles() {
+                const userId = document.getElementById('user_id').value;
+
+                axios.get('https://jsonplaceholder.typicode.com/posts?userId=' + userId).then(response => {
+                    for (let i = 0; i < response.data.length; i ++) {
+                        loadComments(response.data[i]);
+                    }
+                });
+            }
+            */
+
+      async function loadArticles() {
+        const userId = document.getElementById("user_id").value;
+        const articleResponse = await axios.get(
+          "https://jsonplaceholder.typicode.com/posts?userId=" + userId
+        );
+
+        for (let i = 0; i < articleResponse.data.length; i++) {
+          const commentResponse = await axios.get(
+            "https://jsonplaceholder.typicode.com/comments?postId=" +
+              articleResponse.data[i].id
+          );
+
+          const table = document.getElementById("list");
+          const tr = document.createElement("tr");
+          const titleTd = document.createElement("td");
+          const commentCountTd = document.createElement("td");
+
+          titleTd.innerText = articleResponse.data[i].title;
+          commentCountTd.innerText = commentResponse.data.length;
+          commentCountTd.style.textAlign = "center";
+
+          tr.appendChild(titleTd);
+          tr.appendChild(commentCountTd);
+          table.appendChild(tr);
+        }
+      }
+    </script>
+  </body>
+</html>
