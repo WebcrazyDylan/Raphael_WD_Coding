@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="zxx">
+  <head>
+    <!-- Metas -->
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, maximum-scale=1"
+    />
+    <!-- Title  -->
+    <title>fetch with jsonplaceholder</title>
+
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl"
+      crossorigin="anonymous"
+    />
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <style>
+      .listUser {
+        list-style: none;
+        margin: 100px 0;
+        padding: 0;
+      }
+
+      .listUser ul {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        border: 1px solid black;
+        width: 35%;
+        padding: 10px;
+      }
+
+      header {
+        margin-top: 30px;
+      }
+    </style>
+
+    <script>
+      const FeatchUser = (id) => {
+        //Featch Data
+        fetch(
+          `https://jsonplaceholder.typicode.com/users${id ? `/${id}` : ""}`
+        ).then((response) => {
+          //Check the status of the request.
+          if (response.status !== 200) {
+            console.log(`ops, we have a error ${response.status}`);
+            return;
+          }
+
+          //Convert the data into json
+          response
+            .json()
+            .then((data) => {
+              //select the elements with jquery
+              let listUser = $(".listUser");
+              if (!Array.isArray(data)) data = [data];
+              //function to create the page when load the document
+              for (let user of data) {
+                // create variables from the object user
+                let name = user.name;
+                let username = user.username;
+                let email = user.email;
+                let street = user.address.street;
+                let city = user.address.city;
+                let suite = user.address.suite;
+
+                //append the content with Jquery
+                listUser.append(
+                  `<li><ul><li>${name}</li><li>${username}</li><li>${email}</li><li>${street}</li><li>${city}</li><li>${suite}</li></ul></li>`
+                );
+              }
+            })
+
+            .catch((error) => {
+              console.log(`We have some error ${error}`);
+            });
+        });
+      };
+
+      $(document).ready(() => {
+        FeatchUser(); //when we load the page
+        let searchButton = $("#search");
+
+        searchButton.on("click", () => {
+          //when we search for a user
+          $(".listUser").empty();
+          let idValue = parseInt($("#searchValue").val()); //convert the value to number
+          FeatchUser(idValue);
+        });
+      });
+    </script>
+  </head>
+
+  <body>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <header>
+            <form>
+              <input
+                id="searchValue"
+                class="form-control form-control-sm"
+                type="number"
+              />
+              <button type="button" id="search" class="btn btn-primary">
+                Search
+              </button>
+            </form>
+          </header>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-12">
+          <ul class="listUser"></ul>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
